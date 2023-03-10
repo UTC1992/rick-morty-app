@@ -1,0 +1,45 @@
+<div class="container-profile">
+  <mat-grid-list cols="1" rowHeight="100%">
+    <mat-grid-tile>
+      <mat-card class="container-profile__card">
+        <mat-card-content>
+          <h3 class="container-profile__card__title">{{ title }}</h3>
+          <mat-grid-list cols="1" rowHeight="12rem">
+            <mat-grid-tile>
+              <div class="container-profile__card__container">
+                <img
+                  class="container-profile__card__container__image"
+                  src=""
+                  alt=""
+                />
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <form
+            class="container-profile__card__form"
+            [formGroup]="profileForm"
+            id="profileForm"
+          >
+            <mat-form-field appearance="outline">
+              <mat-label>Nickname</mat-label>
+              <input type="text" formControlName="nickname" matInput />
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Nombres y Apellidos</mat-label>
+              <input type="text" formControlName="fullName" matInput />
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+            <button
+              class="btn-submit"
+              type="submit"
+              [disabled]="!profileForm.valid"
+            >
+              Actualizar
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

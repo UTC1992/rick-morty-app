@@ -47,14 +47,14 @@ describe('RegisterComponent', () => {
   });
 
   it('should have input with initial value', () => {
-    const loginFormGroup = component.registerForm;
-    const loginFormValues = {
+    const registerFormGroup = component.registerForm;
+    const registerFormValues = {
       fullName: '',
       nickname: '',
       email: '',
       password: '',
     };
-    expect(loginFormGroup.value).toEqual(loginFormValues);
+    expect(registerFormGroup.value).toEqual(registerFormValues);
   });
 
   it('should render a form group with 4 inputs', () => {

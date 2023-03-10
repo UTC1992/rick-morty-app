@@ -7,9 +7,9 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  title = 'Rick and Morty'
-  titleLinkToRegister = 'Registrarme'
-  loginForm = new FormGroup({
+  title: string = 'Rick and Morty'
+  titleLinkToRegister: string = 'Registrarme'
+  loginForm: FormGroup = new FormGroup({
     email: new FormControl(''),
     password: new FormControl('')
   })

@@ -8,9 +8,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class RegisterComponent {
   // data form and title
-  title = 'Registro'
-  titleLinkToLogin = 'Ingresar'
-  registerForm = new FormGroup({
+  title: string = 'Registro'
+  titleLinkToLogin: string = 'Ingresar'
+  registerForm: FormGroup = new FormGroup({
     fullName: new FormControl(''),
     nickname: new FormControl(''),
     email: new FormControl(''),
