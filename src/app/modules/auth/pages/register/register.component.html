@@ -4,7 +4,7 @@
       <mat-card class="card">
         <mat-card-content>
           <h3 class="card__title">{{ title }}</h3>
-          <form class="register-form" [formGroup]="loginForm" id="loginForm">
+          <form class="register-form" [formGroup]="registerForm" id="registerForm">
             <mat-form-field appearance="outline">
               <mat-label>Nombres y Apellidos</mat-label>
               <input
@@ -44,10 +44,14 @@
             <button
               class="btn-submit"
               type="submit"
-              [disabled]="!loginForm.valid"
+              [disabled]="!registerForm.valid"
             >
               Registrarme
             </button>
+            <p class="question">
+              ¿ Ya tienes cuenta ?
+              <a href="/auth/login" class="link">Ingresar</a>
+            </p>
           </form>
         </mat-card-content>
       </mat-card>

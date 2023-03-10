@@ -47,7 +47,7 @@ describe('RegisterComponent', () => {
   });
 
   it('should have input with initial value', () => {
-    const loginFormGroup = component.loginForm;
+    const loginFormGroup = component.registerForm;
     const loginFormValues = {
       fullName: '',
       nickname: '',
@@ -59,7 +59,7 @@ describe('RegisterComponent', () => {
 
   it('should render a form group with 4 inputs', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    const formElement = compiled.querySelector('#loginForm');
+    const formElement = compiled.querySelector('#registerForm');
     const inputElements = formElement?.querySelectorAll('input');
     expect(inputElements?.length).toEqual(4);
   });
@@ -70,4 +70,20 @@ describe('RegisterComponent', () => {
       'Registrarme'
     );
   });
+
+  it(`should have as info of link to Login`, () => {
+    expect(component.titleLinkToLogin).toEqual('Ingresar');
+  });
+
+  it('should render the question about your account', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('p')?.textContent).toContain('¿ Ya tienes cuenta ?');
+  });
+
+  it('should render the link to Login', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('a')?.textContent).toContain('Ingresar');
+  });
+
+
 });

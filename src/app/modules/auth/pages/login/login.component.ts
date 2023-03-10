@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  title = 'Rick and Morty'
+  titleLinkToRegister = 'Registrarme'
+  loginForm = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl('')
+  })
 
 }

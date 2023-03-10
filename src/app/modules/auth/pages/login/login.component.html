@@ -1,1 +1,43 @@
-<p>login works!</p>
+<div class="container-login">
+  <mat-grid-list cols="1" rowHeight="100%">
+    <mat-grid-tile>
+      <mat-card class="card">
+        <mat-card-content>
+          <h3 class="card__title">{{ title }}</h3>
+          <form class="login-form" [formGroup]="loginForm" id="loginForm">
+
+            <mat-form-field appearance="outline">
+              <mat-label>Correo</mat-label>
+              <input
+                type="email"
+                formControlName="email"
+                matInput
+              />
+              <mat-icon matSuffix>alternate_email</mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Contraseña</mat-label>
+              <input
+                type="password"
+                formControlName="password"
+                matInput
+              />
+              <mat-icon matSuffix>lock</mat-icon>
+            </mat-form-field>
+            <button
+              class="btn-submit"
+              type="submit"
+              [disabled]="!loginForm.valid"
+            >
+              Ingresar
+            </button>
+            <p class="question">
+              ¿ No tienes cuenta ?
+              <a href="/auth/register" class="link">Registrarte</a>
+            </p>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
