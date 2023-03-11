@@ -1,0 +1,11 @@
+.divider-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-link {
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    text-decoration-line: underline;
+  }
+}
