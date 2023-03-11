@@ -1,11 +1,4 @@
 {
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  // "editor.formatOnSave": true,
-  "eslint.alwaysShowStatus": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
+   "recommendations": ["angular.ng-template"]
 }

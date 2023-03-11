@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component } from '@angular/core'
+import { FormControl, FormGroup } from '@angular/forms'
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
   // data form and title
@@ -14,7 +14,6 @@ export class RegisterComponent {
     fullName: new FormControl(''),
     nickname: new FormControl(''),
     email: new FormControl(''),
-    password: new FormControl('')
+    password: new FormControl(''),
   })
-
 }
