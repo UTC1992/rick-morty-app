@@ -9,7 +9,7 @@ import { UserModel } from '../../../../core/models/user.model';
 })
 
 export class ProfileComponent {
-  title: string = 'Perfil'
+  title = 'Perfil'
   userToEdit: UserModel = new UserModel()
   profileForm: FormGroup = new FormGroup({
     nickname: new FormControl(''),
