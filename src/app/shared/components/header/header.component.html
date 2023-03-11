@@ -1,13 +1,13 @@
 <mat-toolbar color="primary">
-  <a routerLink="/home" class="toolbar-link"> Rick and Morty</a>
+  <a routerLink="/" class="toolbar-link"> Rick and Morty</a>
   <span class="divider-spacer"></span>
-  <button matTooltip="Lista de personajes" mat-icon-button>
+  <button matTooltip="Lista de personajes" routerLink="/character-list" mat-icon-button>
     <mat-icon>list_alt</mat-icon>
   </button>
-  <button matTooltip="Mi lista de personajes" mat-icon-button>
+  <button matTooltip="Mi lista de personajes" routerLink="/my-character-list" mat-icon-button>
     <mat-icon>favorite</mat-icon>
   </button>
-  <button matTooltip="Ver perfil" mat-icon-button>
+  <button matTooltip="Ver perfil" routerLink="/profile" mat-icon-button>
     <mat-icon>account_circle</mat-icon>
   </button>
 </mat-toolbar>

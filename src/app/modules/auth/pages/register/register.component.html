@@ -4,45 +4,34 @@
       <mat-card class="card">
         <mat-card-content>
           <h3 class="card__title">{{ title }}</h3>
-          <form class="register-form" [formGroup]="registerForm" id="registerForm">
+          <form
+            class="register-form"
+            [formGroup]="registerForm"
+            id="registerForm"
+          >
             <mat-form-field appearance="outline">
               <mat-label>Nombres y Apellidos</mat-label>
-              <input
-                type="text"
-                formControlName="fullName"
-                matInput
-              />
+              <input type="text" formControlName="fullName" matInput />
               <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Nickname</mat-label>
-              <input
-                type="text"
-                formControlName="nickname"
-                matInput
-              />
+              <input type="text" formControlName="nickname" matInput />
               <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Correo</mat-label>
-              <input
-                type="email"
-                formControlName="email"
-                matInput
-              />
+              <input type="email" formControlName="email" matInput />
               <mat-icon matSuffix>alternate_email</mat-icon>
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Contraseña</mat-label>
-              <input
-                type="password"
-                formControlName="password"
-                matInput
-              />
+              <input type="password" formControlName="password" matInput />
               <mat-icon matSuffix>lock</mat-icon>
             </mat-form-field>
             <button
-              class="btn-submit"
+              mat-raised-button
+              color="primary"
               type="submit"
               [disabled]="!registerForm.valid"
             >

@@ -6,11 +6,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { HeaderComponent } from './components/header/header.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     CommonModule,
@@ -18,7 +19,8 @@ import { HeaderComponent } from './components/header/header.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent
