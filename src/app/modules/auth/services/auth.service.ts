@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { IAuthData } from '../models/auth.model'
-import { IGenericResponse } from '../types/generic-response.type'
-import { IAuthResponse } from '../types/auth-response.type'
 import { JwtHelperService } from '@auth0/angular-jwt'
 import * as moment from 'moment'
 import { Observable } from 'rxjs'
+import { IAuthData } from '../../../core/models/auth.model'
+import { IAuthResponse } from '../../../core/types/auth-response.type'
+import { IGenericResponse } from '../../../core/types/generic-response.type'
 
 @Injectable({
   providedIn: 'root',
