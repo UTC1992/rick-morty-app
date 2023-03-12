@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { FormControl, FormGroup } from '@angular/forms'
+import { DomSanitizer, SafeValue } from '@angular/platform-browser'
 import { UserModel } from '../../../../core/models/user.model'
 
 @Component({
@@ -8,10 +9,25 @@ import { UserModel } from '../../../../core/models/user.model'
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent {
-  title = 'Perfil'
-  userToEdit: UserModel = new UserModel()
-  profileForm: FormGroup = new FormGroup({
-    nickname: new FormControl(''),
-    fullName: new FormControl(''),
-  })
+  title: string
+  userToEdit: UserModel
+  profileForm: FormGroup
+  urlImage: SafeValue
+
+  constructor(private sanitizer: DomSanitizer) {
+    this.title = 'Profile'
+    this.userToEdit = new UserModel()
+    this.profileForm = new FormGroup({
+      nickname: new FormControl(''),
+      fullName: new FormControl(''),
+    })
+    this.urlImage = ''
+
+    fetch('http://localhost:8080/api/upload/640de174268ab55e362e9953')
+      .then((res) => res.blob())
+      .then((data) => {
+        const objectURL = URL.createObjectURL(data)
+        this.urlImage = this.sanitizer.bypassSecurityTrustUrl(objectURL)
+      })
+  }
 }
