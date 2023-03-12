@@ -1,30 +1,33 @@
-interface IUser {
-  id: number;
-  fullName: string;
-  nickname: string;
-  email: string;
-  password: string;
+export interface IUser {
+  id: number
+  fullName: string
+  nickname: string
+  email: string
+  password: string
+  image: string
 }
 
 export class UserModel implements IUser {
-  id: number;
-  fullName: string;
-  nickname: string;
-  email: string;
-  password: string;
+  id: number
+  fullName: string
+  nickname: string
+  email: string
+  password: string
+  image: string
 
   constructor(
-    id: number = 0,
-    fullName: string = '',
-    nickname: string = '',
-    email: string = '',
-    password: string = ''
+    id = 0,
+    fullName = '',
+    nickname = '',
+    email = '',
+    password = '',
+    image = '',
   ) {
-    this.id = id;
-    this.fullName = fullName;
-    this.nickname = nickname;
-    this.email = email;
-    this.password = password;
+    this.id = id
+    this.fullName = fullName
+    this.nickname = nickname
+    this.email = email
+    this.password = password
+    this.image = image
   }
 }
-
