@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { IAuthData } from '../models/auth.model'
-import { IUser } from '../models/user.model'
 import { IGenericResponse } from '../types/generic-response.type'
 import { IAuthResponse } from '../types/auth-response.type'
 import { JwtHelperService } from '@auth0/angular-jwt'
@@ -12,6 +11,7 @@ import { Observable } from 'rxjs'
   providedIn: 'root',
 })
 export class AuthService {
+  momentLib = moment
   constructor(private http: HttpClient) {}
 
   login(authData: IAuthData): Observable<IGenericResponse<IAuthResponse>> {
@@ -24,7 +24,7 @@ export class AuthService {
   setSession(authResult: IAuthResponse): void {
     const helper = new JwtHelperService()
     const tokenData = helper.decodeToken(authResult.token)
-    const expiresAt = moment().add(tokenData.exp, 'second')
+    const expiresAt = this.momentLib().add(tokenData.exp, 'second')
 
     localStorage.setItem('token', authResult.token)
     localStorage.setItem('expiresIn', JSON.stringify(expiresAt.valueOf()))
@@ -35,7 +35,7 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return moment().isBefore(this.getExpiration())
+    return this.momentLib().isBefore(this.getExpiration())
   }
 
   getToken(): string {
@@ -46,6 +46,6 @@ export class AuthService {
   getExpiration(): moment.MomentInput {
     const expiration = localStorage.getItem('expiresIn') || ''
     const expiresAt = JSON.parse(expiration)
-    return moment(expiresAt)
+    return this.momentLib(expiresAt)
   }
 }
