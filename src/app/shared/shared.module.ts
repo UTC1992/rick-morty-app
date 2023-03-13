@@ -10,6 +10,9 @@ import { RouterModule } from '@angular/router'
 import { DialogDataDialog } from './components/dialog/dialog.component'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatInputModule } from '@angular/material/input'
+import { FormsModule } from '@angular/forms'
+import { DialogModule } from '@angular/cdk/dialog'
+import { MatCardModule } from '@angular/material/card'
 
 @NgModule({
   declarations: [HeaderComponent, DialogDataDialog],
@@ -23,6 +26,9 @@ import { MatInputModule } from '@angular/material/input'
     RouterModule,
     MatDialogModule,
     MatInputModule,
+    FormsModule,
+    DialogModule,
+    MatCardModule,
   ],
   exports: [HeaderComponent],
 })

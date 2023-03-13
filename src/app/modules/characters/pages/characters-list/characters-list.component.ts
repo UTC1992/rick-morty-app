@@ -1,8 +1,9 @@
 import { Component } from '@angular/core'
-import { MatDialog } from '@angular/material/dialog'
 import { CharactersService } from '../../../../core/services/characters/characters.service'
 import { ICharacter } from '../../../../core/types/characters.type'
 import { DialogDataDialog } from '../../../../shared/components/dialog/dialog.component'
+import { Dialog } from '@angular/cdk/dialog'
+import { IRatingCharacter } from '../../../../core/types/rating-character.type'
 
 @Component({
   selector: 'app-characters-list',
@@ -14,9 +15,13 @@ export class CharactersListComponent {
   characterListSearched: ICharacter[] = []
   breakpoint: number = 1
   searchValue: string = ''
+  rating: number = 0
+  comment: string = ''
+  characterToAdd: ICharacter = {}
+
   constructor(
     private characterService: CharactersService,
-    public dialog: MatDialog,
+    public dialog: Dialog,
   ) {}
 
   ngOnInit() {
@@ -40,22 +45,51 @@ export class CharactersListComponent {
 
   onSearching(event: string) {
     const characters = this.characterList.filter((item) =>
-      item.name.toLowerCase().includes(event.toLowerCase()),
+      item.name?.toLowerCase().includes(event.toLowerCase()),
     )
     this.characterListSearched =
       event.length > 0 ? characters : this.characterList
   }
 
-  onSearchCharacter(event: number) {
-    const character = this.characterList.find((item) => item.id === event)
-    console.log(character)
+  onFindCharacter(id: number) {
+    const character = this.characterList.find((item) => item.id === id)
+    if (character) {
+      this.characterToAdd = character
+    }
   }
 
-  openDialog() {
-    this.dialog.open(DialogDataDialog, {
-      data: {
-        animal: 'panda',
+  openDialog(id: number) {
+    this.onFindCharacter(id)
+    const dialogRef = this.dialog.open<{ rating: number; comment: string }>(
+      DialogDataDialog,
+      {
+        data: {
+          rating: this.rating,
+          comment: this.comment,
+        },
       },
+    )
+
+    dialogRef.closed.subscribe((result) => {
+      this.rating = result?.rating || 0
+      this.comment = result?.comment || ''
+      this.onAddRating()
     })
+  }
+
+  onAddRating() {
+    const ratingCharacter: IRatingCharacter = {
+      rating: this.rating,
+      comment: this.comment,
+      name: this.characterToAdd.name || '',
+      image: this.characterToAdd.image || '',
+    }
+
+    this.characterService.saveCharacter(ratingCharacter).subscribe(
+      (response) => {
+        console.log(response)
+      },
+      (error) => console.log(error),
+    )
   }
 }

@@ -11,18 +11,18 @@ export interface IInfo {
 }
 
 export interface ICharacter {
-  id: number
-  name: string
-  status: EStatus
-  species: ESpecies
-  type: string
-  gender: EGender
-  origin: Location
-  location: Location
-  image: string
-  episode: string[]
-  url: string
-  created: Date
+  id?: number
+  name?: string
+  status?: EStatus
+  species?: ESpecies
+  type?: string
+  gender?: EGender
+  origin?: Location
+  location?: Location
+  image?: string
+  episode?: string[]
+  url?: string
+  created?: Date
 }
 
 export enum EGender {

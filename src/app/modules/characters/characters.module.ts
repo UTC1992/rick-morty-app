@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { CharactersRoutingModule } from './characters-routing.module'
 import { ItemCharacterComponent } from './components/item-character/item-character.component'
 import { FormsModule } from '@angular/forms'
+import { DialogModule } from '@angular/cdk/dialog'
 
 @NgModule({
   declarations: [CharactersListComponent, ItemCharacterComponent],
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms'
     MatInputModule,
     MatIconModule,
     FormsModule,
+    DialogModule,
   ],
 })
 export class CharactersModule {}

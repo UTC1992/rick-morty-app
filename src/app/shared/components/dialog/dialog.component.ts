@@ -1,8 +1,10 @@
-import { Component, Inject } from '@angular/core'
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog'
+import { DialogRef } from '@angular/cdk/dialog'
+import { Component, EventEmitter, Inject, Output } from '@angular/core'
+import { Dialog, DIALOG_DATA } from '@angular/cdk/dialog'
 
 export interface DialogData {
-  animal: 'panda' | 'unicorn' | 'lion'
+  rating: number
+  comment: string
 }
 
 @Component({
@@ -11,5 +13,23 @@ export interface DialogData {
   styleUrls: ['./dialog.component.scss'],
 })
 export class DialogDataDialog {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  commentValue: string = ''
+  rating: number = 0
+
+  constructor(
+    public dialogRef: DialogRef<{ rating: number; comment: string }>,
+    @Inject(DIALOG_DATA) public data: DialogData,
+  ) {}
+
+  onSetRating(value: number) {
+    this.rating = value
+  }
+
+  onAddComment(event: any) {
+    this.commentValue = event
+  }
+
+  onSendData() {
+    this.dialogRef.close({ rating: this.rating, comment: this.commentValue })
+  }
 }
