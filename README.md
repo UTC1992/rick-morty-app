@@ -22,3 +22,6 @@
 ## Se instalo Eslint 
   Se utilizó eslint para evitar ciertos errores al momento de escribir el codigo y de esta forma se puede mantener el formato en el código
 
+## Se puede correr docker
+  1.- Ejecutar el siguiente comando `docker build -t test/rich-morty .`
+  2.- Ejecutar el siguiente comando `docker run -it -d -p 4001:80 test/rich-morty`
