@@ -6,10 +6,11 @@ import { MatCardModule } from '@angular/material/card'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatInputModule } from '@angular/material/input'
 import { MatIconModule } from '@angular/material/icon'
-import { CharactersRoutingModule } from './characters-routing.module'
+import { CharactersRoutingModule } from './characters-routing.module';
+import { ItemCharacterComponent } from './components/item-character/item-character.component'
 
 @NgModule({
-  declarations: [CharactersListComponent],
+  declarations: [CharactersListComponent, ItemCharacterComponent],
   imports: [
     CommonModule,
     CharactersRoutingModule,

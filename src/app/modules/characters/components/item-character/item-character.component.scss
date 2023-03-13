@@ -1,0 +1,39 @@
+.card-character {
+  cursor: pointer;
+  &:hover {
+    animation-duration: 2s;
+    animation-name: rebotar;
+    border: 2px solid #000000;
+  }
+}
+
+.card-character__avatar {
+  width: 2.5rem;
+}
+
+.card-character__image {
+  width: 60%;
+  height: 60%;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.card-character__episodes-title {
+  margin-top: 5px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.card-character__episodes {
+  height: 80px;
+  overflow-y: scroll;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  padding: 0px 10px;
+}
+
+@keyframes rebotar {
+  0%, 20%, 50%, 80% {transform: translateY(0);}
+  40% {transform: translateY(-30px);}
+  60% {transform: translateY(-15px);}
+}

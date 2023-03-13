@@ -1,0 +1,29 @@
+<mat-card class="card-character">
+  <mat-card-header>
+    <div mat-card-avatar>
+      <img
+        mat-card-image
+        [src]="image"
+        [alt]="name"
+        class="card-character__avatar"
+      />
+    </div>
+    <mat-card-title>{{ name }}</mat-card-title>
+    <mat-card-subtitle>{{ gender }}</mat-card-subtitle>
+    <mat-card-subtitle>{{ status }}</mat-card-subtitle>
+  </mat-card-header>
+  <img
+    mat-card-image
+    [src]="image"
+    [alt]="name"
+    class="card-character__image"
+  />
+  <mat-card-content>
+    <h4 class="card-character__episodes-title">Episodios</h4>
+    <div class="card-character__episodes">
+      <p *ngFor="let item of episodes">
+        {{ item }}
+      </p>
+    </div>
+  </mat-card-content>
+</mat-card>
