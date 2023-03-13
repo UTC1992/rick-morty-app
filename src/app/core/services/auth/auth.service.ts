@@ -29,12 +29,14 @@ export class AuthService {
     const expiresAt = this.momentLib().add(tokenData.exp, 'second')
 
     localStorage.setItem('token', authResult.token)
+    localStorage.setItem('userId', tokenData.id)
     localStorage.setItem('expiresIn', JSON.stringify(expiresAt.valueOf()))
   }
 
   logout(): void {
     localStorage.removeItem('token')
     localStorage.removeItem('expiresIn')
+    localStorage.removeItem('userId')
   }
 
   isLoggedIn(): boolean {
@@ -44,6 +46,11 @@ export class AuthService {
   getToken(): string {
     const token = localStorage.getItem('token') || ''
     return token
+  }
+
+  getUserId(): string {
+    const id = localStorage.getItem('userId') || ''
+    return id
   }
 
   getExpiration(): moment.MomentInput {

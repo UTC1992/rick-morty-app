@@ -1,14 +1,14 @@
 export interface IUser {
-  id: number
-  fullName: string
-  nickname: string
-  email: string
-  password: string
-  image: string
+  id?: string
+  fullName?: string
+  nickname?: string
+  email?: string
+  password?: string
+  image?: string
 }
 
 export class UserModel implements IUser {
-  id: number
+  id: string
   fullName: string
   nickname: string
   email: string
@@ -16,7 +16,7 @@ export class UserModel implements IUser {
   image: string
 
   constructor(
-    id = 0,
+    id = '',
     fullName = '',
     nickname = '',
     email = '',

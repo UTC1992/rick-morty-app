@@ -6,12 +6,29 @@
           <h3 class="container-profile__card__title">{{ title }}</h3>
           <mat-grid-list cols="1" rowHeight="12rem">
             <mat-grid-tile>
-              <div class="container-profile__card__container">
+              <input
+                type="file"
+                class="container-profile__file-input"
+                accept="image/*"
+                (change)="onSelectImage($event)"
+                #fileUpload
+              />
+              <div
+                class="container-profile__card__container"
+                (click)="fileUpload.click()"
+              >
                 <img
                   class="container-profile__card__container__image"
                   [src]="urlImage"
                   alt=""
+                  *ngIf="urlImage"
                 />
+                <mat-icon
+                  matSuffix
+                  class="container-profile__card__container__icon"
+                  *ngIf="!urlImage"
+                  >person</mat-icon
+                >
               </div>
             </mat-grid-tile>
           </mat-grid-list>
@@ -19,23 +36,26 @@
             class="container-profile__card__form"
             [formGroup]="profileForm"
             id="profileForm"
+            (ngSubmit)="onSubmit()"
           >
             <mat-form-field appearance="outline">
               <mat-label>Nickname</mat-label>
               <input type="text" formControlName="nickname" matInput />
               <mat-icon matSuffix>person</mat-icon>
+              <mat-error
+                *ngIf="
+                  profileForm.get('nickname')?.hasError('nicknameAlreadyExist')
+                "
+              >
+                El nickname <strong>ya existe</strong>
+              </mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Nombres y Apellidos</mat-label>
               <input type="text" formControlName="fullName" matInput />
               <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
-            <button
-              mat-raised-button
-              color="primary"
-              type="submit"
-              [disabled]="!profileForm.valid"
-            >
+            <button mat-raised-button color="primary" type="submit">
               Actualizar
             </button>
           </form>

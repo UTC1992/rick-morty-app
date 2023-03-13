@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
+import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { AuthService } from '../../../../core/services/auth/auth.service'
 import { IAuthData } from '../../../../core/types/auth.type'
 import { EStatus } from '../../../../core/types/generic-response.type'
@@ -48,7 +48,7 @@ export class LoginComponent {
       this.authService.login(authData).subscribe(
         (response) => {
           if (response.status === EStatus.SUCCESS) {
-            console.log(response)
+            this.router.navigate(['/characters'])
             this.authService.setSession(response.data)
           }
         },

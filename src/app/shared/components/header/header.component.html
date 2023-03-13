@@ -3,7 +3,7 @@
   ><span class="divider-spacer"></span>
   <button
     matTooltip="Lista de personajes"
-    routerLink="/auth/login"
+    routerLink="/characters"
     mat-icon-button
     *ngIf="showItems"
   >
@@ -24,5 +24,13 @@
     mat-icon-button
   >
     <mat-icon>account_circle</mat-icon>
+  </button>
+  <button
+    matTooltip="Cerrar sesión"
+    (click)="onLogout()"
+    *ngIf="showItems"
+    mat-icon-button
+  >
+    <mat-icon>logout</mat-icon>
   </button>
 </mat-toolbar>
