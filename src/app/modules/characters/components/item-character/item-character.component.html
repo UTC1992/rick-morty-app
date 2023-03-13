@@ -11,6 +11,13 @@
     <mat-card-title>{{ name }}</mat-card-title>
     <mat-card-subtitle>{{ gender }}</mat-card-subtitle>
     <mat-card-subtitle>{{ status }}</mat-card-subtitle>
+
+    <mat-icon
+      matSuffix
+      class="card-character__add-favorite"
+      (click)="sendIdCharacter()"
+      >favorite</mat-icon
+    >
   </mat-card-header>
   <img
     mat-card-image

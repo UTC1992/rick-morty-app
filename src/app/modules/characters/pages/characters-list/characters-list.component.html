@@ -20,11 +20,13 @@
     >
       <mat-grid-tile *ngFor="let item of characterListSearched">
         <app-item-character
+          [id]="item.id"
           [image]="item.image"
           [name]="item.name"
           [gender]="item.gender"
           [episodes]="item.episode"
           [status]="item.status"
+          (sendId)="openDialog()"
         ></app-item-character>
       </mat-grid-tile>
     </mat-grid-list>

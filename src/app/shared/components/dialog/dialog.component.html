@@ -1,0 +1,26 @@
+<div mat-dialog-content class="dialog__content">
+  <h1 mat-dialog-title>Califica al personaje</h1>
+  <div class="dialog__ranking">
+    Ranking:
+    <mat-icon matSuffix class="dialog__ranking__start">star</mat-icon>
+    <mat-icon matSuffix class="dialog__ranking__start">star</mat-icon>
+    <mat-icon matSuffix class="dialog__ranking__start">star</mat-icon>
+    <mat-icon matSuffix class="dialog__ranking__start">star</mat-icon>
+    <mat-icon matSuffix class="dialog__ranking__start">star</mat-icon>
+  </div>
+  <mat-form-field appearance="outline">
+    <mat-label>Comentario:</mat-label>
+    <textarea
+      matInput
+      cdkTextareaAutosize
+      #autosize="cdkTextareaAutosize"
+      cdkAutosizeMinRows="1"
+      cdkAutosizeMaxRows="5"
+    ></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close color="primary">
+    Añadir a mi lista
+  </button>
+</div>

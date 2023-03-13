@@ -33,6 +33,14 @@
   padding: 0px 10px;
 }
 
+.card-character__add-favorite {
+ width: 3rem;
+ height: 3rem;
+ font-size: 3rem;
+ margin-left: auto;
+}
+
+
 @keyframes rebotar {
   0%, 20%, 50%, 80% {transform: translateY(0);}
   40% {transform: translateY(-30px);}
