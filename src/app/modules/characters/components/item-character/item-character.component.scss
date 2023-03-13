@@ -1,10 +1,13 @@
 .card-character {
   cursor: pointer;
+
   &:hover {
-    animation-duration: 2s;
-    animation-name: rebotar;
-    border: 2px solid #000000;
+    margin-top: -50px;
+    transition: all 300ms;
+    box-shadow: 1px 1px 20px -10px #20202049;
   }
+
+  width: 350px;
 }
 
 .card-character__avatar {

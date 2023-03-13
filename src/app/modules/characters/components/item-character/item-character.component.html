@@ -16,10 +16,9 @@
       matTooltip="Añadir personaje"
       mat-icon-button
       class="card-character__button"
+      (click)="sendIdCharacter()"
     >
-      <mat-icon class="card-character__add-favorite" (click)="sendIdCharacter()"
-        >favorite</mat-icon
-      >
+      <mat-icon class="card-character__add-favorite">favorite</mat-icon>
     </button>
   </mat-card-header>
   <img
