@@ -4,19 +4,21 @@ import { JwtHelperService } from '@auth0/angular-jwt'
 import * as moment from 'moment'
 import { Observable } from 'rxjs'
 import { IAuthData } from '../../models/auth.model'
-import { IAuthResponse } from '../../types/auth-response.type'
+import { IAuthResponse } from '../../types/auth.type'
 import { IGenericResponse } from '../../types/generic-response.type'
+import { environment } from '../../../../environments/environment.development'
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  url = environment.apiUrl
   momentLib = moment
   constructor(private http: HttpClient) {}
 
   login(authData: IAuthData): Observable<IGenericResponse<IAuthResponse>> {
     return this.http.post<IGenericResponse<IAuthResponse>>(
-      '/api/auth',
+      `${this.url}/api/auth`,
       authData,
     )
   }

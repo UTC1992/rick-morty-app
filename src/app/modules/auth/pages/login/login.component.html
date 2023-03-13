@@ -4,23 +4,32 @@
       <mat-card class="card">
         <mat-card-content>
           <h3 class="card__title">{{ title }}</h3>
-          <form class="login-form" [formGroup]="loginForm" id="loginForm">
+          <form
+            class="login-form"
+            [formGroup]="loginForm"
+            id="loginForm"
+            (ngSubmit)="onSubmit()"
+          >
             <mat-form-field appearance="outline">
               <mat-label>Correo</mat-label>
               <input type="email" formControlName="email" matInput />
               <mat-icon matSuffix>alternate_email</mat-icon>
+              <mat-error *ngIf="email.errors?.['required']">
+                El email es requerido
+              </mat-error>
+              <mat-error *ngIf="email.errors?.['pattern']">
+                El email es invalido
+              </mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Contraseña</mat-label>
               <input type="password" formControlName="password" matInput />
               <mat-icon matSuffix>lock</mat-icon>
+              <mat-error *ngIf="password.errors?.['required']"
+                >La contraseña es requerida</mat-error
+              >
             </mat-form-field>
-            <button
-              mat-raised-button
-              color="primary"
-              type="submit"
-              [disabled]="!loginForm.valid"
-            >
+            <button mat-raised-button color="primary" type="submit">
               Ingresar
             </button>
             <p class="question">
