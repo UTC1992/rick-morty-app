@@ -10,9 +10,17 @@ import { CharactersRoutingModule } from './characters-routing.module'
 import { ItemCharacterComponent } from './components/item-character/item-character.component'
 import { FormsModule } from '@angular/forms'
 import { DialogModule } from '@angular/cdk/dialog'
+import { MyCharacterListComponent } from './pages/my-character-list/my-character-list.component'
+import { ItemMyCharacterComponent } from './components/item-my-character/item-my-character.component'
+import { MatTooltipModule } from '@angular/material/tooltip'
 
 @NgModule({
-  declarations: [CharactersListComponent, ItemCharacterComponent],
+  declarations: [
+    CharactersListComponent,
+    ItemCharacterComponent,
+    MyCharacterListComponent,
+    ItemMyCharacterComponent,
+  ],
   imports: [
     CommonModule,
     CharactersRoutingModule,
@@ -23,6 +31,7 @@ import { DialogModule } from '@angular/cdk/dialog'
     MatIconModule,
     FormsModule,
     DialogModule,
+    MatTooltipModule,
   ],
 })
 export class CharactersModule {}

@@ -12,12 +12,15 @@
     <mat-card-subtitle>{{ gender }}</mat-card-subtitle>
     <mat-card-subtitle>{{ status }}</mat-card-subtitle>
 
-    <mat-icon
-      matSuffix
-      class="card-character__add-favorite"
-      (click)="sendIdCharacter()"
-      >favorite</mat-icon
+    <button
+      matTooltip="Añadir personaje"
+      mat-icon-button
+      class="card-character__button"
     >
+      <mat-icon class="card-character__add-favorite" (click)="sendIdCharacter()"
+        >favorite</mat-icon
+      >
+    </button>
   </mat-card-header>
   <img
     mat-card-image

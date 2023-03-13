@@ -1,0 +1,43 @@
+<mat-card class="card-my-character">
+  <mat-card-header>
+    <div mat-card-avatar>
+      <img
+        mat-card-image
+        [src]="image"
+        [alt]="name"
+        class="card-my-character__avatar"
+      />
+    </div>
+    <mat-card-title>{{ name }}</mat-card-title>
+    <button
+      matTooltip="El personaje ya esa añadido"
+      mat-icon-button
+      class="card-my-character__button"
+    >
+      <mat-icon class="card-my-character__add-favorite">favorite</mat-icon>
+    </button>
+  </mat-card-header>
+  <img
+    mat-card-image
+    [src]="image"
+    [alt]="name"
+    class="card-my-character__image"
+  />
+  <mat-card-content>
+    <h4 class="card-my-character__episodes-title">Calificación</h4>
+    <div class="card-my-character__dialog__ranking">
+      <mat-icon
+        matSuffix
+        *ngFor="let item of stars"
+        [class]="
+          item <= rating
+            ? 'card-my-character__dialog__ranking__start start--yellow'
+            : 'card-my-character__dialog__ranking__start'
+        "
+        >star</mat-icon
+      >
+    </div>
+    <h4 class="card-my-character__episodes-title">Commentario</h4>
+    <p class="card-my-character__comment">{{ comment }}</p>
+  </mat-card-content>
+</mat-card>

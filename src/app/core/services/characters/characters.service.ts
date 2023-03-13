@@ -27,4 +27,10 @@ export class CharactersService {
       character,
     )
   }
+
+  getMyCharacterList(): Observable<IGenericResponse<IRatingCharacter[]>> {
+    return this.http.get<IGenericResponse<IRatingCharacter[]>>(
+      `${this.urlApi}/api/character`,
+    )
+  }
 }

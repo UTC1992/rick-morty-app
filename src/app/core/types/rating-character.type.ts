@@ -3,4 +3,5 @@ export interface IRatingCharacter {
   comment: string
   image: string
   name: string
+  id?: string
 }

@@ -1,17 +1,18 @@
-.card-character {
+.card-my-character {
   cursor: pointer;
   &:hover {
     animation-duration: 2s;
     animation-name: rebotar;
     border: 2px solid #000000;
   }
+  width: 300px;
 }
 
-.card-character__avatar {
+.card-my-character__avatar {
   width: 2.5rem;
 }
 
-.card-character__image {
+.card-my-character__image {
   width: 60%;
   height: 60%;
   margin: auto;
@@ -19,13 +20,13 @@
   border-radius: 5px;
 }
 
-.card-character__episodes-title {
+.card-my-character__episodes-title {
   margin-top: 5px;
   text-align: center;
   margin-bottom: 0px;
 }
 
-.card-character__episodes {
+.card-my-character__episodes {
   height: 80px;
   overflow-y: scroll;
   border: 1px solid #eeeeee;
@@ -33,14 +34,29 @@
   padding: 0px 10px;
 }
 
-.card-character__add-favorite {
+.card-my-character__add-favorite {
  width: 3rem;
  height: 3rem;
  font-size: 3rem;
  margin-left: auto;
 }
 
-.card-character__button {
+.card-my-character__dialog__ranking {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.card-my-character__comment {
+  text-align: justify;
+}
+
+.start--yellow {
+  color: rgb(213, 213, 63);
+}
+
+.card-my-character__button {
   padding: 0px;
   margin-left: auto;
 }

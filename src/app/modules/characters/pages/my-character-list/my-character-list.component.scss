@@ -1,0 +1,19 @@
+.grid-my-characters {
+  z-index: 0;
+  padding-top: 120px;
+}
+
+.grid-my-characters__list {
+  max-height: calc(100vh - 300px);
+  overflow-y: scroll;
+  background-color: #eeeeee;
+}
+
+.grid-my-characters__search {
+  padding-left: 2rem;
+}
+
+.grid-my-characters__title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}

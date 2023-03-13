@@ -1,0 +1,31 @@
+<div class="grid-my-characters">
+  <div class="grid-my-characters__search">
+    <h1 class="grid-my-characters__title">Mi Lista de Personajes</h1>
+    <mat-form-field appearance="outline">
+      <mat-label>Buscar por nombre</mat-label>
+      <input
+        type="text"
+        [(ngModel)]="searchValue"
+        (ngModelChange)="onSearching($event)"
+        matInput
+      />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+  <div class="grid-my-characters__list">
+    <mat-grid-list
+      [cols]="breakpoint"
+      rowHeight="500px"
+      (window:resize)="handleSize($event)"
+    >
+      <mat-grid-tile *ngFor="let item of characterListSearched">
+        <app-item-my-character
+          [image]="item.image"
+          [name]="item.name"
+          [rating]="item.rating"
+          [comment]="item.comment"
+        ></app-item-my-character>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
