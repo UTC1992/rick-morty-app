@@ -15,7 +15,7 @@ export class ProfileComponent {
   urlImage: SafeValue
 
   constructor(private sanitizer: DomSanitizer) {
-    this.title = 'Profile'
+    this.title = 'Perfil'
     this.userToEdit = new UserModel()
     this.profileForm = new FormGroup({
       nickname: new FormControl(''),
