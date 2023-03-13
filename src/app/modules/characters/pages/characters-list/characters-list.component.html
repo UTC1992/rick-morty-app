@@ -1,17 +1,27 @@
 <div class="grid-characters">
-  <mat-grid-list
-    [cols]="breakpoint"
-    rowHeight="500px"
-    (window:resize)="handleSize($event)"
-  >
-    <mat-grid-tile *ngFor="let item of characterList">
-      <app-item-character
-        [image]="item.image"
-        [name]="item.name"
-        [gender]="item.gender"
-        [episodes]="item.episode"
-        [status]="item.status"
-      ></app-item-character>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div class="grid-characters__search">
+    <h1 class="grid-characters__title">Personajes</h1>
+    <mat-form-field appearance="outline">
+      <mat-label>Buscar por nombre</mat-label>
+      <input type="text" formControlName="characterName" matInput />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+  <div class="grid-characters__list">
+    <mat-grid-list
+      [cols]="breakpoint"
+      rowHeight="500px"
+      (window:resize)="handleSize($event)"
+    >
+      <mat-grid-tile *ngFor="let item of characterList">
+        <app-item-character
+          [image]="item.image"
+          [name]="item.name"
+          [gender]="item.gender"
+          [episodes]="item.episode"
+          [status]="item.status"
+        ></app-item-character>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>
