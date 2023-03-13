@@ -9,7 +9,9 @@ import { ICharacter } from '../../../../core/types/characters.type'
 })
 export class CharactersListComponent {
   characterList: ICharacter[] = []
+  characterListSearched: ICharacter[] = []
   breakpoint: number = 1
+  searchValue: string = ''
   constructor(private characterService: CharactersService) {}
 
   ngOnInit() {
@@ -25,8 +27,17 @@ export class CharactersListComponent {
     this.characterService.getCharacters().subscribe(
       (response) => {
         this.characterList = response.results
+        this.characterListSearched = response.results
       },
       (error) => console.log(error),
     )
+  }
+
+  onSearching(event: string) {
+    const characters = this.characterList.filter((item) =>
+      item.name.toLowerCase().includes(event.toLowerCase()),
+    )
+    this.characterListSearched =
+      event.length > 0 ? characters : this.characterList
   }
 }

@@ -6,8 +6,9 @@ import { MatCardModule } from '@angular/material/card'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatInputModule } from '@angular/material/input'
 import { MatIconModule } from '@angular/material/icon'
-import { CharactersRoutingModule } from './characters-routing.module';
+import { CharactersRoutingModule } from './characters-routing.module'
 import { ItemCharacterComponent } from './components/item-character/item-character.component'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [CharactersListComponent, ItemCharacterComponent],
@@ -19,6 +20,7 @@ import { ItemCharacterComponent } from './components/item-character/item-charact
     MatGridListModule,
     MatInputModule,
     MatIconModule,
+    FormsModule,
   ],
 })
 export class CharactersModule {}
